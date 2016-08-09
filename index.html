@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<!-- CSS -->
+<style>
+
+body {
+  padding-top: 50px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: auto;
+  position: relative;
+  width: 60%;
+}
+
+header {
+  
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-align: center;
+  margin: auto;
+  position: relative;
+  width: 960px;
+}
+
+text {
+  font: 10px sans-serif;
+}
+
+</style>
+
+<!-- HTML -->
+<div class="bc">
+<form name="input">
+  Number of Pidgeys:<br>
+  <input type="text" name="pidgeys"><br>
+  Amount of candy:<br>
+  <input type="text" name="candy">
+  <br>
+  <input type="button" onclick="pidgeyCalc()" value="Calculate!">
+</form>    
+<div id="output"> </div>
+
+<!-- JS -->
+<script src="d3.min.js"></script>
+
+<script>
+
+function pidgeyCalc() {
+  var n = parseInt(document.forms["input"]["pidgeys"].value);
+  var c = parseInt(document.forms["input"]["candy"].value);
+  var e = Math.floor((n + c)/12);
+  if (e >= n) {
+    e = n;
+    text = "You can evolve all " + n + " of your Pidgeys! Get to it!"
+    document.getElementById("output").innerHTML = text;
+    return;
+  }
+  text = "You will be able to evolve <b>" + e + "</b> Pidgeys. This means you can and should transfer <b> " + (n - e) + "</b> of them now."
+  document.getElementById("output").innerHTML = text;
+}
+
+</script>
