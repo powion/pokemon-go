@@ -4,40 +4,58 @@
 <!-- CSS -->
 <style>
 
-body {
-  padding-top: 50px;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  margin: auto;
-  position: relative;
-  width: 60%;
+html, body {
+  margin: 0;
+  padding: 0
 }
 
 header {
-  
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-align: center;
-  margin: auto;
   position: relative;
-  width: 960px;
+}
+
+#headerBar {
+  height: 100px;
+  background: #a4625a;
+}
+
+#contentWrapper {
+  width: 70%;
+  background: #fff;
+  margin: 0 auto;
+  text-align: center;
 }
 
 text {
   font: 10px sans-serif;
 }
 
+
 </style>
 
 <!-- HTML -->
-<div class="bc">
-<form name="input">
-  Number of Pidgeys:<br>
-  <input type="text" name="pidgeys"><br>
-  Amount of candy:<br>
-  <input type="text" name="candy">
+<div id="headerBar"></div>
+
+<div id="contentWrapper">
+  <header>
+    <h1> The Pidgulator </h1>
+    &#60;o <br>
+    (&nbsp;&nbsp;&nbsp;)<br>
+    &nbsp;L L<br>
+  </header>
   <br>
-  <input type="button" onclick="pidgeyCalc()" value="Calculate!">
-</form>    
-<div id="output"> </div>
+  <form name="input">
+    Number of Pidgeys:<br>
+    <input type="text" name="pidgeys"><br><br>
+    Amount of candy:<br>
+    <input type="text" name="candy">
+    <br>
+    <input type="button" onclick="pidgeyCalc()" value="Calculate!">
+  </form>
+  <br>
+  <div id="output"> </div>
+</div>
 
 <!-- JS -->
 <script src="d3.min.js"></script>
